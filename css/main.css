@@ -1,0 +1,21 @@
+/* main.css */
+
+/**
+ * add-border box
+ * Add a border-box to every element to simplify setting width and height.
+ *
+ * Without a border-box all elements' width and height does not include margin
+ * and padding, making calculations much tougher.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-semi: 500;
+  --fw-bold: 700;
+  }
