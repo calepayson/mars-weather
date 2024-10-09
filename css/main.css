@@ -1,7 +1,7 @@
 /* main.css */
 
 /**
- * add-border box
+ * Add border-box
  * Add a border-box to every element to simplify setting width and height.
  *
  * Without a border-box all elements' width and height does not include margin
@@ -29,4 +29,29 @@
   --clr-accent-dark: #613131;
   }
 
+  /**
+   * Visually hidden content
+   * See inclusively-hidden by Scott Ohara
+   *
+   * Uses a few declarations to shrink an element to a 1px square, hide 
+   * overflow, and position the element to not interrupt normal document flow.
+   */
+  .sr-only:not(:focus):not(:activate) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
 
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;   /* A decent default */
+    background-image: url();    /* Add the background image URL here */
+    height: 100vh;      /* Usually sketchy but forces the previous day content */
+    overflow: hidden;   /* off-screen */
+    color: var(--clr-light);
+}
