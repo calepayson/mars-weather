@@ -50,7 +50,7 @@
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;   /* A decent default */
-    background-image: url();    /* Add the background image URL here */
+    background-image: url(../img/mars.jpg);    /* Add the background image URL here */
     height: 100vh;      /* Usually sketchy but forces the previous day content */
     overflow: hidden;   /* off-screen */
     color: var(--clr-light);
