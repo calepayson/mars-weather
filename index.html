@@ -18,6 +18,46 @@
 <body>
 
   <main class="mars-current-weather">
+    <h1 class="main-title">Latest weather at Elysium Plantitia</h1>
+
+    <div class="date">
+      <h2 class="section-title section-title--date">Sol 377</h2>
+      <p class="date__day">September 18</p>
+    </div>
+
+    <div class="temp">
+      <h2 class="section-title section-title--date">Temperature</h2>
+      <p class="reading">High: -20&deg;C</p>
+      <p class="reading">Low: -98&deg;C</p>
+    </div>
+
+    <div class="wind">
+      <h2 class="section-title section-title--date">Wind</h2>
+      <p class="reading">75kph</p>
+
+      <div class="wind__direction">
+        <p class="sr-only">45deg</p>
+        <div class="wind__arrow"></div>
+      </div>
+    </div>
+
+    <div class="info">
+      <p>InSight is taking daily weather measurements (temperature, wind, 
+      pressure) on the surface of Mars at Elysium Planitia, a flat, smooth 
+      plain near Mars' equator.</p>
+      <p>This is only a part of InSight's mission. 
+      <a href="https://mars.nasa.gov/insight/mission/overview/">Click here</a> 
+      to find out more.</p>
+    </div>
+
+    <div class="unit">
+      <label for="cel">&deg;C</label>
+      <input type="radio" id="cel" name="unit" checked>
+      <!-- when unit__toggle is clicked checkbox needs to change -->
+      <button class="unit__toggle"></button>
+      <label for="fah">&deg;F</label>
+      <input type="radio" id="fah" name="unit">
+    </div>
 
   </main>
 
