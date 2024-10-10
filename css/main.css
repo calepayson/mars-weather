@@ -61,6 +61,14 @@ h1, h2, h3 {
   line-height: 1;   /* 1.6 is way too large for a heading line height */
 }
 
+a {
+  color: var(--clr-accent);
+}
+
+a:hover {
+  color: var(--clr-accent-dark);
+}
+
 .main-title {
   font-size: var(--fs-h1);
   font-weight: var(--fw-light);
@@ -73,6 +81,10 @@ h1, h2, h3 {
   font-size: var(--fs-h2);
   font-weight: var(--fw-bold);
   margin: 0;
+}
+
+.section-title--date {
+  font-size: var(--fs-xl);
 }
 
 .mars-current-weather {
