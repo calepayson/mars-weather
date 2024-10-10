@@ -85,6 +85,12 @@ a:hover {
   margin: 0;
 }
 
+.reading {
+  font-size: var(--fs-h1);
+  margin: 0;
+  color: var(--clr-gray);
+}
+
 .section-title--date {
   font-size: var(--fs-xl);
 }
