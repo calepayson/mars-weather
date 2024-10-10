@@ -57,9 +57,27 @@
     color: var(--clr-light);
 }
 
+h1, h2, h3 {
+  line-height: 1;   /* 1.6 is way too large for a heading line height */
+}
+
+.main-title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-light);
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  margin: 0;
+}
+
 .mars-current-weather {
-  background: rgba(0, 0, 0, .7);
+  background: rgba(0, 0, 0, .7);    /* The .7 is opacity */
   padding: 2em;
   max-width: 1000px;
-  margin: 4em 0 0 4em;
+  margin: 4em 0 0 4em;  /* top right bottom left*/
 }
