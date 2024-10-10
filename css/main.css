@@ -51,7 +51,15 @@
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;   /* A decent default */
     background-image: url(../img/mars.jpg);    /* Add the background image URL here */
+    background-size: cover;
     height: 100vh;      /* Usually sketchy but forces the previous day content */
     overflow: hidden;   /* off-screen */
     color: var(--clr-light);
+}
+
+.mars-current-weather {
+  background: rgba(0, 0, 0, .7);
+  padding: 2em;
+  max-width: 1000px;
+  margin: 4em 0 0 4em;
 }
