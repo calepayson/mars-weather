@@ -110,8 +110,19 @@ a:hover {
   grid-column: 1 / 2;   /* Explicitly define the column/width */
 }
 
+.date__day {
+  font-size: var(--fs-h2);
+  margin: 0;
+  color: var(--clr-gray);
+  font-weight: var(--fw-light);
+}
+
 .temp {
+  --border: solid .5em var(--clr-accent-dark);  /* set a local variable */
   grid-column: 2 / 3;   /* Explicitly define the column/width */
+  border-left: var(--border);   /* use the local var to define left and right */
+  border-right: var(--border);  /* borders */
+  padding: 0 2em;
 }
 
 .wind {
