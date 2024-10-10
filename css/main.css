@@ -36,7 +36,7 @@
    * Uses a few declarations to shrink an element to a 1px square, hide 
    * overflow, and position the element to not interrupt normal document flow.
    */
-  .sr-only:not(:focus):not(:activate) {
+  .sr-only:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -127,6 +127,14 @@ a:hover {
 
 .wind {
   grid-column: 3 / 4;   /* Explicitly define the column/width */
+}
+
+.wind__direction {
+  --size: 5rem;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: rgba(255,255,255,.5)
 }
 
 .info {
