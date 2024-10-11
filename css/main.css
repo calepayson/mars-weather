@@ -166,6 +166,29 @@ a:hover {
   grid-column: 1 / 3;
 }
 
-.unit-toggle {
+.unit {
   grid-column: 3 / 4;
+  place-self: end;  /* move unit to bottom right corner of its cell */
+  color: var(--clr-gray);
+  display: flex;
+  gap: .5em;
+}
+
+.unit__toggle {
+  cursor: pointer;  /* activates hand mouse symbol on hover */
+  width: 4em;
+  border: 2px solid var(--clr-gray);
+  background: transparent;
+  padding: 0;
+  border-radius: 100vmax;   /* Give the border the pill shape */
+}
+
+.unit__toggle::after {
+  content: '';  /* sudo-elements need content */
+  display: block;
+  background: var(--clr-gray);
+  border-radius: 50%;
+  height: 1rem;
+  margin: 3px;
+  width: 1rem;
 }
