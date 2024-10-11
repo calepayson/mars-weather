@@ -48,6 +48,7 @@
 
   body {
     margin: 0;
+    padding-top: 1px;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;   /* A decent default */
     background-image: url(../img/mars.jpg);    /* Add the background image URL here */
@@ -169,26 +170,51 @@ a:hover {
 .unit {
   grid-column: 3 / 4;
   place-self: end;  /* move unit to bottom right corner of its cell */
-  color: var(--clr-gray);
+  color: var(--clr-light);
   display: flex;
-  gap: .5em;
+  opacity: .7;
+  transition: opacity 275ms linear; /* set a transition animation */
+}
+
+.unit:hover {
+  opacity: 1;
+}
+
+.unit label {   /* For all labels within .unit */
+  cursor: pointer;
+}
+
+.unit input {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .unit__toggle {
   cursor: pointer;  /* activates hand mouse symbol on hover */
   width: 4em;
-  border: 2px solid var(--clr-gray);
+  border: 2px solid var(--clr-light);
   background: transparent;
   padding: 0;
   border-radius: 100vmax;   /* Give the border the pill shape */
+  margin: 0 1em;
 }
 
 .unit__toggle::after {
   content: '';  /* sudo-elements need content */
   display: block;
-  background: var(--clr-gray);
+  background: var(--clr-light);
   border-radius: 50%;
   height: 1rem;
   margin: 3px;
+  margin-left: auto;    /* Pushes the unit toggle all the way right */
   width: 1rem;
+}
+
+.unit:checked ~ .unit__toggle::after {   /* If an element is checked and followed by .unit__toggle... */
+  margin-left: 3px; /* pulls the unit__toggle left */
 }
