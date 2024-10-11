@@ -127,14 +127,39 @@ a:hover {
 
 .wind {
   grid-column: 3 / 4;   /* Explicitly define the column/width */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content 1fr;
+  align-self: start;
+
+  .section-title,
+  .reading {
+    grid-column: 2 / 3;
+  }
 }
 
 .wind__direction {
-  --size: 5rem;
+  --size: 6rem;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background-color: rgba(255,255,255,.5)
+  background-color: rgba(255,255,255,.5);
+
+  display: grid;
+  place-items: center;
+  grid-row: 1 / span 2;
+}
+
+.wind__arrow {
+  /* Update Custom Props in JS to update the direction */
+  --direction: 0deg;
+  --size: 1rem;
+  height: calc(var(--size) * 3);
+  width: var(--size);
+  background: var(--clr-accent-dark);
+  clip-path: polygon(50% 0, 0% 100%, 100% 100%);    /* Draw the triangle */
+  transform: translateY(-50%) rotate(var(--direction)); /* "Center" the */
+  transform-origin: bottom center;  /* triangle and add rotation        */
 }
 
 .info {
