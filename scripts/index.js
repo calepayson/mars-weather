@@ -1,4 +1,4 @@
-
+console.log(CONFIG.API_KEY);
 
 const previousWeatherToggle = document.querySelector('.show-previous-weather');
 
