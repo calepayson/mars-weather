@@ -18,10 +18,10 @@
   --fw-normal: 400;
   --fw-semi: 500;
   --fw-bold: 700;
-  --fs-h1: 1.5rem;  /* like em but sets font based on root element */
-  --fs-h2: 2.25rem;
+  --fs-h1: 1.25rem;  /* like em but sets font based on root element */
+  --fs-h2: 1.75rem;
   --fs-body: 1rem;
-  --fs-xl: 4.5rem;
+  --fs-xl: 4rem;
   --clr-light: #fff;
   --clr-gray: #989898;
   --clr-dark: #444;
@@ -53,9 +53,8 @@
     line-height: 1.6;   /* A decent default */
     background-image: url(../img/mars.jpg);    /* Add the background image URL here */
     background-size: cover;
-    height: 100vh;      /* Usually sketchy but forces the previous day content */
-    overflow: hidden;   /* off-screen */
     color: var(--clr-light);
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
@@ -100,11 +99,7 @@ a:hover {
   background: rgba(0, 0, 0, .7);    /* The .7 is opacity */
   padding: 2em;
   max-width: 1000px;
-  margin: 4em 0 0 4em;  /* top right bottom left*/
-
-  display: grid;    /* Initialize a grid layout */
-  grid-template-columns: repeat(3, 1fr); /* Create three equally sized columns */
-  grid-gap: 2em;
+  margin: 1em;
 }
 
 .date {
@@ -120,27 +115,25 @@ a:hover {
 
 .temp {
   --border: solid .5em var(--clr-accent-dark);  /* set a local variable */
-  grid-column: 2 / 3;   /* Explicitly define the column/width */
-  border-left: var(--border);   /* use the local var to define left and right */
-  border-right: var(--border);  /* borders */
-  padding: 0 2em;
+  padding: 2em 0;
 }
 
 .wind {
   grid-column: 3 / 4;   /* Explicitly define the column/width */
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1em;
+  grid-template-columns: min-content 1fr;
   grid-template-rows: min-content 1fr;
   align-self: start;
 
   .section-title,
   .reading {
-    grid-column: 2 / 3;
+    grid-column: 1 / 2;
   }
 }
 
 .wind__direction {
-  --size: 6rem;
+  --size: 4rem;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
@@ -148,13 +141,14 @@ a:hover {
 
   display: grid;
   place-items: center;
+  grid-column: 2 / 3;
   grid-row: 1 / span 2;
 }
 
 .wind__arrow {
   /* Update Custom Props in JS to update the direction */
   --direction: 0deg;
-  --size: 1rem;
+  --size: .6rem;
   height: calc(var(--size) * 3);
   width: var(--size);
   background: var(--clr-accent-dark);
@@ -220,6 +214,7 @@ a:hover {
 }
 
 .previous-weather {
+  display: none;
   background: var(--clr-light);
   color: var(--clr-dark);
   position: absolute;
@@ -338,5 +333,62 @@ a:hover {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+@media (min-width: 900px) {
+  :root {
+    --fs-h1: 1.5rem;  /* like em but sets font based on root element */
+    --fs-h2: 2.25rem;
+    --fs-body: 1rem;
+    --fs-xl: 4.5rem;
+  }
+
+  body {
+    height: 100vh;      /* Usually sketchy but forces the previous day content */
+    overflow: hidden;   /* off-screen */
+  }
+
+  .mars-current-weather {
+    margin: 4em 0 0 4em;  /* top right bottom left*/
+    display: grid;    /* Initialize a grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Create three equally sized columns */
+    grid-gap: 2em;
+  }
+
+  .temp {
+    grid-column: 2 / 3;   /* Explicitly define the column/width */
+    border-left: var(--border);   /* use the local var to define left and right */
+    border-right: var(--border);  /* borders */
+    padding: 0 2em;
+  }
+
+  .wind {
+    .section-title,
+    .reading {
+      grid-column: 2 / 3;
+    }
+  }
+
+  .wind__direction {
+    --size: 6rem;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.5);
+
+    display: grid;
+    place-items: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / span 2;
+  }
+
+  .wind__arrow {
+    --size: 1em;
+  }
+
+  .previous-weather {
+    display: block;
   }
 }
